@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{{title}} - BluesServer</title>
-</head>
-<body>
+{% extends "base.html"%}
+
+{% block content%}
     <h1>Hello,{{user.username}}!</h1>
-</body>
-</html>
+    {% for post in posts %}
+    <div><p>{{ post.auther.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock%}
