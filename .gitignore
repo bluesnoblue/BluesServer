@@ -1,4 +1,8 @@
 .idea/*
 __pycache__/
 *.xml
+<<<<<<< HEAD
+=======
+*.iml
+>>>>>>> 67fd5ef5a2bedbc702c388686319933a8aee660e
 *.xml
