@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from config import Config
@@ -13,7 +14,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 bootstrap = Bootstrap(app)
-
+moment = Moment(app)
 db = SQLAlchemy(app)
 
 migrate = Migrate(app, db)
