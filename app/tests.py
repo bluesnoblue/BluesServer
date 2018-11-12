@@ -4,9 +4,11 @@ from app.models import User, Post
 from datetime import datetime, timedelta
 from config import Config
 
+
 class TestConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
+
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):
@@ -87,11 +89,11 @@ class UserModelCase(unittest.TestCase):
         f2 = u2.followed_posts().all()
         f3 = u3.followed_posts().all()
         f4 = u4.followed_posts().all()
-        self.assertEqual(f1, [p2, p4, p1]) #BUG
+        self.assertEqual(f1, [p2, p4, p1])
         self.assertEqual(f2, [p2, p3])
         self.assertEqual(f3, [p3, p4])
         self.assertEqual(f4, [p4])
 
 
-if __name__ =='__main__':
+if __name__ == '__main__':
     unittest.main(verbosity=2)
