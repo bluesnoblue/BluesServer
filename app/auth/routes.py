@@ -25,10 +25,12 @@ def login():
         return redirect(next_page)
     return render_template('auth/login.html', title='Sign In', form=form)
 
+
 @bp.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
+
 
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
@@ -44,6 +46,7 @@ def register():
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', title='Register', form=form)
 
+
 @bp.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
     if current_user.is_authenticated:
@@ -56,6 +59,7 @@ def reset_password_request():
         flash('Check your email for the instructions to reset your password')
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password_request.html', title='Reset Password', form=form)
+
 
 @bp.route('/reset_password/<token>', methods=['GET','POST'])
 def reset_password(token):
