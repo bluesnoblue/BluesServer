@@ -5,8 +5,6 @@
 /app/__pycache__
 <<<<<<< HEAD
 *.pyc
-*.pyc
 =======
-.idea/workspace.xml
 .idea/workspace.xml
 >>>>>>> f71ba3ae5d4a542d0e942d0eb0687daa9317eb8f
